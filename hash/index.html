@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Hash Router</title>
+</head>
+<body>
+<ul>
+    <li><a href="#/">turn white</a></li>
+    <li><a href="#/blue">turn blue</a></li>
+    <li><a href="#/green">turn green</a></li>
+</ul>
+<script src="router.js"></script>
+<script>
+var router = new Router();
+router.init();
+router.route('/', () =>{
+    changeBgColor('white');
+})
+router.route('/blue', () =>{
+    changeBgColor('blue');
+})
+router.route('/green', () =>{
+    changeBgColor('green');
+})
+
+var content = document.querySelector('body');
+function changeBgColor(color) {
+    content.style.backgroundColor = color;
+}
+</script>
+</body>
+</html>
